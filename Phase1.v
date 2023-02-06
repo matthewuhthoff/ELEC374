@@ -1,9 +1,9 @@
-module Register(
-   input clock,
-   input clear, 
-   input enable,
-   input [31:0] data_in,
-   output [31:0] data_out);
+module register(
+	input clock,
+	input clear, 
+	input enable,
+	input [31:0] data_in,
+	output [31:0] data_out);
 	
 	reg [31:0] q;
 	

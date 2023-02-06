@@ -1,7 +1,7 @@
 module multiplexer(
 	input [4:0] control,
-	input [31:0] BusMuxIn-R0,
-	input [31:0] BusMuxIn-R1,
+	input [31:0] BusMuxIn_R0,
+	input [31:0] BusMuxIn_R1,
 	input [31:0] BusMuxIn-R2,
 	input [31:0] BusMuxIn-R3,
 	input [31:0] BusMuxIn-R4,
@@ -14,8 +14,8 @@ module multiplexer(
 	input [31:0] BusMuxIn-R11,
 	input [31:0] BusMuxIn-R12,
 	input [31:0] BusMuxIn-R13,
-	input [31:0] BusMuxIn-R14,
-	input [31:0] BusMuxIn-R15,
+	input [31:0] BusMuxIn_R14,
+	input [31:0] BusMuxIn_R15,
 	
 	input [31:0] BusMuxIn-HI,
 	input [31:0] BusMuxIn-LO,
