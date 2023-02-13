@@ -1,4 +1,7 @@
-module BoothMultiplier( // this code doesnt work
+
+
+
+module BoothMultiplier(
     input wire [31:0] a,
     input wire [31:0] b,
     output wire [63:0] result
