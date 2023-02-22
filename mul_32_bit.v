@@ -1,4 +1,4 @@
-module(input signed [31:0] M,
+module mul_32   (input signed [31:0] M,
     input signed [31:0] Q,
     output wire [63:0] result);
 
