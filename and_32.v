@@ -1,4 +1,3 @@
-
 module and_32(
     input [31:0] a_reg,
     input [31:0] b_reg,
@@ -9,6 +8,6 @@ module and_32(
     //    begin
     //        c_reg[i] = a_reg[i] & b_reg[i];
     //    end
-    c_reg = a_reg & b_reg;
+    assign c_reg = a_reg & b_reg;
 
 endmodule
