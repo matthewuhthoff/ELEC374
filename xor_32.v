@@ -9,6 +9,6 @@ module xor_32(
     //    begin
     //        c_reg[i] = a_reg[i] ^ b_reg[i];
     //    end
-    c_reg = a_reg ^ b_reg;
+    assign c_reg = a_reg ^ b_reg;
 
 endmodule

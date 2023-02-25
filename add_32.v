@@ -1,5 +1,5 @@
 
-module add_32(input [31:0] a_reg, input [31:0] b_reg, input wire cin,
+module add_32(input [31:0] a_reg, input [31:0] b_reg, input [0:0] cin,
               output wire [31:0] sum, output wire cout); 
     wire firstCout;
 
@@ -29,8 +29,7 @@ module carryLA16(input wire[15:0] a_reg, input wire[15:0] b_reg, input wire cin,
 endmodule
 
 
-module carryLA4(input wire[3:0] a_reg, input wire[3:0] b_reg, input wire cin, 
-                ouput wire[3:0] sum, output wire cout);
+module carryLA4(input wire [3:0] a_reg, input wire [3:0] b_reg, input wire cin, output wire[3:0] sum, output wire cout);
 
     wire [3:0] prop, gen, carry;
 
@@ -39,7 +38,7 @@ module carryLA4(input wire[3:0] a_reg, input wire[3:0] b_reg, input wire cin,
     assign carry[0] = cin;
     assign carry[1] = gen[0] | (prop[0] & carry[0]);
     assign carry[2] = gen[1] | (prop[1] & gen[0]) | prop[1] | prop[0] & carry[0];
-    assign carry[3] = gen[2] | (prop[2] & gen(1)) | prop[2] & prop[1] & gen[0] | prop[2] & prop[1] & prop[0] & carry[0];
+    assign carry[3] = gen[2] | (prop[2] & gen[1]) | prop[2] & prop[1] & gen[0] | prop[2] & prop[1] & prop[0] & carry[0];
     assign cout = gen[3] | (prop[3] & gen[2]) | prop[3] & prop[2] & gen[1] | prop[3] & prop[2] & prop[1] & gen[0] | prop[3] & prop[2] & prop[1] & prop[0] & carry[0];
 	assign sum[3:0] = prop ^ carry;
 
