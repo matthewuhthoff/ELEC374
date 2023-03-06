@@ -40,7 +40,6 @@ always @(posedge Clock) // finite state machine; if clock rising-edge
     end
 
 always @(Present_state) // do the required job in each state
-12
     begin
         case (Present_state) // assert the required signals in each clock cycle
             Default: begin
@@ -83,12 +82,11 @@ always @(Present_state) // do the required job in each state
             end
             T1: begin
                 Zlowout <= 1; PCin <= 1; Read <= 1; MDRin <= 1;
-                Mdatain <= 32'h28918000; // opcode for “and R1, R2, R3”
+                Mdatain <= 32'h28918000; // instruction for “and R1, R2, R3”
             end
             T2: begin
                 MDRout <= 1; IRin <= 1;
             end
-            13
             T3: begin
                 R2out <= 1; Yin <= 1;
             end
