@@ -28,31 +28,33 @@ module multiplexer(
 	
 	
 	output [31:0] BusMuxOut);
-	
-	case (control)
-		5'd1 : BusMuxOut <= BusMuxIn-R0[31:0];
-		5'd2 : BusMuxOut <= BusMuxIn-R1[31:0];
-		5'd3 : BusMuxOut <= BusMuxIn-R2[31:0];
-		5'd4 : BusMuxOut <= BusMuxIn-R3[31:0];
-		5'd5 : BusMuxOut <= BusMuxIn-R4[31:0];
-		5'd6 : BusMuxOut <= BusMuxIn-R5[31:0];
-		5'd7 : BusMuxOut <= BusMuxIn-R6[31:0];
-		5'd8 : BusMuxOut <= BusMuxIn-R7[31:0];
-		5'd9 : BusMuxOut <= BusMuxIn-R8[31:0];
-		5'd10 : BusMuxOut <= BusMuxIn-R9[31:0];
-		5'd11: BusMuxOut <= BusMuxIn-R10[31:0];
-		5'd12 : BusMuxOut <= BusMuxIn-R11[31:0];
-		5'd13 : BusMuxOut <= BusMuxIn-R12[31:0];
-		5'd14 : BusMuxOut <= BusMuxIn-R13[31:0];
-		5'd15 : BusMuxOut <= BusMuxIn-R14[31:0];
-		5'd16 : BusMuxOut <= BusMuxIn-R15[31:0];
-		
-		5'd17 : BusMuxOut <= BusMuxIn-HI[31:0];
-		5'd18 : BusMuxOut <= BusMuxIn-LO[31:0];
-		5'd19 : BusMuxOut <= BusMuxIn-Zhigh[31:0];
-		5'd20: BusMuxOut <= BusMuxIn-Zlow[31:0];
-		5'd21 : BusMuxOut <= BusMuxIn-PC[31:0];
-		5'd22 : BusMuxOut <= BusMuxIn-MDR[31:0];
-		5'd23 : BusMuxOut <= BusMuxIn-In.Port[31:0];
-		5'd24 : BusMuxOut <= C_sign_extended[31:0];
-	
+	always @ (*) begin
+		case (control)
+			5'd1 : BusMuxOut <= BusMuxIn-R0[31:0];
+			5'd2 : BusMuxOut <= BusMuxIn-R1[31:0];
+			5'd3 : BusMuxOut <= BusMuxIn-R2[31:0];
+			5'd4 : BusMuxOut <= BusMuxIn-R3[31:0];
+			5'd5 : BusMuxOut <= BusMuxIn-R4[31:0];
+			5'd6 : BusMuxOut <= BusMuxIn-R5[31:0];
+			5'd7 : BusMuxOut <= BusMuxIn-R6[31:0];
+			5'd8 : BusMuxOut <= BusMuxIn-R7[31:0];
+			5'd9 : BusMuxOut <= BusMuxIn-R8[31:0];
+			5'd10 : BusMuxOut <= BusMuxIn-R9[31:0];
+			5'd11: BusMuxOut <= BusMuxIn-R10[31:0];
+			5'd12 : BusMuxOut <= BusMuxIn-R11[31:0];
+			5'd13 : BusMuxOut <= BusMuxIn-R12[31:0];
+			5'd14 : BusMuxOut <= BusMuxIn-R13[31:0];
+			5'd15 : BusMuxOut <= BusMuxIn-R14[31:0];
+			5'd16 : BusMuxOut <= BusMuxIn-R15[31:0];
+			
+			5'd17 : BusMuxOut <= BusMuxIn-HI[31:0];
+			5'd18 : BusMuxOut <= BusMuxIn-LO[31:0];
+			5'd19 : BusMuxOut <= BusMuxIn-Zhigh[31:0];
+			5'd20: BusMuxOut <= BusMuxIn-Zlow[31:0];
+			5'd21 : BusMuxOut <= BusMuxIn-PC[31:0];
+			5'd22 : BusMuxOut <= BusMuxIn-MDR[31:0];
+			5'd23 : BusMuxOut <= BusMuxIn-In.Port[31:0];
+			5'd24 : BusMuxOut <= C_sign_extended[31:0];
+		endcase
+	end
+endmodule
