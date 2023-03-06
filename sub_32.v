@@ -2,7 +2,7 @@ module sub_32(input wire [31:0] a_reg, input wire [31:0] b_reg, input [0:0] cin,
 	wire [31:0] temp;
     wire [31:0] comp1;
     wire [31:0] comp2s;
-	 wire [0:0] tempcout; // Can only store to cout once, gotta figure this out below
+	wire [0:0] tempcout; // Can only store to cout once, gotta figure this out below
 	not_32 compNot(.a_reg(b_reg), .out(comp1));
     
     temp = 32'h00000001;
