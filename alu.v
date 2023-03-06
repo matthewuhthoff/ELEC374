@@ -68,12 +68,12 @@ module alu(
 				end
 				
 				or_, ori: begin
-					C_reg[31:0] <= lor_out[31:0];
+					C_reg[31:0] <= or_out[31:0];
 					C_reg[63:32] <= 32'd0;
 				end
 				
 				and_, andi: begin
-					C_reg[31:0] <= land_out[31:0];
+					C_reg[31:0] <= and_out[31:0];
 					C_reg[63:32] <= 32'd0;
 				end
 				
@@ -147,18 +147,18 @@ module alu(
 			endcase
 	end
 	
-	or_32 lor(Y_reg,B_reg,lor_out);
-	and_32 land(Y_reg,B_reg,land_out);
-	negate_32_bit neg(B_reg,neg_out);
+	or_32 or_(Y_reg,B_reg,lor_out);
+	and_32 and_(Y_reg,B_reg,land_out);
+	negate_32 neg_(B_reg,neg_out);
 	not_32 not_module(B_reg,not_out);
-	add_32 adder(.Ra(Y_reg), .Rb(B_reg),.cin({1'd0}),.sum(adder_sum),.cout(adder_cout));
-	sub_32 subtractor(.Ra(Y_reg), .Rb(B_reg),.cin({1'd0}),.sum(sub_sum),.cout(sub_cout));
-	ror_32 ror_op(Y_reg,B_reg,ror_out);
-	rol_32 rol_op(Y_reg,B_reg,rol_out);
-	shl_32 shl(Y_reg,B_reg,shl_out);
-	shr_32 shr(Y_reg,B_reg,shr_out);
-	div_32 div(Y_reg,B_reg, div_out);
-	mul_32 mul(Y_reg,B_reg,mul_out);
+	add_32 adding(.a_reg(Y_reg), .b_reg(B_reg),.cin({1'd0}),.sum(adder_sum),.cout(adder_cout));
+	sub_32 subbing(.a_reg(Y_reg), .b_reg(B_reg),.cin({1'd0}),.sum(sub_sum),.cout(sub_cout));
+	ror_32 ror_(Y_reg,B_reg,ror_out);
+	rol_32 rol_(Y_reg,B_reg,rol_out);
+	shl_32 shl_(Y_reg,B_reg,shl_out);
+	shr_32 shr_(Y_reg,B_reg,shr_out);
+	div_32 div_(Y_reg,B_reg, div_out);
+	mul_32 mul_(Y_reg,B_reg,mul_out);
 	IncPC_32_bit pc_inc(A_reg, IncPC, IncPC_out);
 
 endmodule

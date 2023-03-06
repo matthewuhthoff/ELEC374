@@ -66,7 +66,7 @@ module div_32(dividend, divisor, quotient, remainder, clk);
 
     reg[32:0] M, A, Q;
     reg[31:0] inv_M, temp_inv_M, temp1;
-    temp1 = = 32'h00000001;
+    temp1 <= 32'h00000001;
     wire useless;
     not_32 comp1 (.a_reg(devisor), .out(temp_inv_M));
     add_32 comp2 (.a_reg(temp_inv_M), .b_reg(temp1), .cin(0), .sum(inv_M), .cout(useless));

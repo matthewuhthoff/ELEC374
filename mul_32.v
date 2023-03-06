@@ -1,7 +1,5 @@
-
-
-
 module BoothMultiplier(
+    input clk,
     input wire [31:0] a,
     input wire [31:0] b,
     output wire [63:0] result
@@ -23,7 +21,7 @@ module BoothMultiplier(
 
     always @(posedge clk) begin
         if (counter == 5'b11111) begin
-            result <= product[63:32];
+            result[31:0] <= product[63:32]; // potential for error
         end else begin
             case (state)
             2'b00: begin

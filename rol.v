@@ -1,4 +1,4 @@
-module rol_32_bit(input [31:0] in, input [4:0] num, output reg [31:0] out);
+module rol_32(input [31:0] in, input [4:0] num, output reg [31:0] out);
 	always@(*) begin
 		case(num)
 			5'd1 : out <= {in[30:0], in[31]};

@@ -5,7 +5,7 @@ module negate_32(
 	
 	wire [31:0] temp; 
 	wire cout;
-	not_32 not_(.Ra(Ra),.Rz(temp));
-	add_32 add_(.Ra(temp), .Rb(32'd1), .cin(1'd0),.sum(Rz), .cout(cout));
+	not_32 not_(.a_reg(Ra), .out(temp));
+	add_32 add_(.a_reg(temp), .b_reg(32'd1), .cin(1'd0), .sum(Rz), .cout(cout));
 	
 endmodule
