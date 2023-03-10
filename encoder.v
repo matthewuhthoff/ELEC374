@@ -32,4 +32,6 @@ module encoder(
 
 			default : encoderOutput <= 5'd31;
 		endcase
+		end
+		
 endmodule

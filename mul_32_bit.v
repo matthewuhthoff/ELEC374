@@ -21,7 +21,7 @@ module mul_32   (input signed [31:0] M,
         endcase
         shr_32 shift(.data_in(temp_q), .shift(1), .data_out(temp_q));
     end
-    
+ 
     assign result = product;
 
 
